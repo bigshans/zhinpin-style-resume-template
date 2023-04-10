@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+body {
+    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+    font-size: 14px;
+}
+@page {
+    size: auto;   /* auto is the initial value */ 
+    /* this affects the margin in the printer settings */ 
+    margin: 20mm 0 15mm 0;
+}
+
+@media printer {
+    #app .wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
