@@ -1,8 +1,9 @@
 <script setup lang="ts">
-    import { ref } from 'vue';
+    import {useProps} from '@/utils';
+import { ref } from 'vue';
     import type {HeaderProps} from '../types/header.type';
     const props = defineProps<{ props: HeaderProps }>();
-    const info = ref(props.props);
+    const info = useProps(props, (props) => props.props);
     function getWorkExperience() {
         const start = new Date(info.value.workStart);
         const now = new Date();

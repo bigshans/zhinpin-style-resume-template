@@ -4,10 +4,10 @@
     import TwoColumn from "./common/TwoColumn.vue";
     import Gap from "./common/SpGap.vue";
     import type { EducationHistory } from "../types/config.type";
-    import {computed} from "vue";
+    import {useProps} from "@/utils";
 
     const props = defineProps<{ education: EducationHistory[] }>();
-    const edus = computed(() => props.education);
+    const edus = useProps(props, (props) => props.education);
 </script>
 
 <template>

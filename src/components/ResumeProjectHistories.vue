@@ -1,13 +1,13 @@
 <script setup lang="ts">
     import ResumeSubtitle from "./common/ResumeSubtitle.vue";
     import type { ProjectHistory } from "../types/config.type";
-    import {computed} from "vue";
     import TwoColumn from "./common/TwoColumn.vue";
     import Gap from "./common/SpGap.vue";
-import MultiContent from "./common/MultiContent.vue";
+    import MultiContent from "./common/MultiContent.vue";
+    import {useProps} from "@/utils";
 
     const props = defineProps<{ projects: ProjectHistory[] }>();
-    const projects = computed(() => props.projects);
+    const projects = useProps(props, () => props.projects);
 </script>
 
 <template>

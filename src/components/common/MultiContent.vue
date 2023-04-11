@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+    import {useProps} from '@/utils';
 
     const props = defineProps<{ content: string; }>();
-    const lines = computed(() => parse(props.content));
+    const lines = useProps(props, (props) => parse(props.content));
 
     function parse(content: string) {
         return content.split('\n')

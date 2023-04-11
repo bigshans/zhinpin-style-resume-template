@@ -1,9 +1,12 @@
 <script setup lang="ts">
+    import {useProps} from '@/utils';
+
     const props = defineProps<{ name: string; }>();
+    const name = useProps(props, (props) => props.name);
 </script>
 
 <template>
-    <div class="tooltip">{{ props.name }}</div>
+    <div class="tooltip">{{ name }}</div>
 </template>
 
 <style scoped>

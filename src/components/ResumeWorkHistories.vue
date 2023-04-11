@@ -5,9 +5,10 @@
     import TwoColumn from './common/TwoColumn.vue';
     import Gap from './common/SpGap.vue';
     import type { WorkHistory } from '../types/config.type';
+import {useProps} from '@/utils';
 
     const props = defineProps<{ history: WorkHistory[]; }>();
-    const histories = ref(props.history);
+    const histories = useProps(props, (props) => props.history);
 </script>
 
 <template>
