@@ -28,9 +28,18 @@ export interface EducationHistory {
     endAt?: string;
 }
 
+export interface OpenSourceHistory {
+    name: string;
+    link: string;
+    description: string;
+    contribution: string;
+}
+
 export interface Resume extends HeaderProps {
     advantaged: string;
     workHistories: WorkHistory[];
     projectHistories: ProjectHistory[];
     educationHistories: EducationHistory[];
+    opensourceHistories?: OpenSourceHistory[];
+    certifications?: string[];
 }
