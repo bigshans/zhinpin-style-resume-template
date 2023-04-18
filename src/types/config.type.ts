@@ -10,7 +10,7 @@ export interface WorkHistory {
 }
 
 export interface ProjectHistory {
-    company: string;
+    company?: string;
     projectName: string;
     job: string;
     content: string;

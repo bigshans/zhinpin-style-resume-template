@@ -15,7 +15,7 @@
     <template v-for="project, index in projects" :key="index">
         <TwoColumn>
             <template v-slot:left>
-                {{ project.projectName }}<Gap/>{{ project.job }}<Gap/><span style="font-size: 16px; color: #777; font-weight: normal;">{{ project.company }}</span>
+                {{ project.projectName }}<Gap/>{{ project.job }}<Gap/><span v-if="project.company" style="font-size: 16px; color: #777; font-weight: normal;">{{ project.company }}</span>
             </template>
             <template v-slot:right>
                 {{ project.startAt }}-{{ project.endAt || "至今" }}
